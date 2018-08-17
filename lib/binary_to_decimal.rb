@@ -5,5 +5,11 @@
 # Calculate  and return the decimal value for this binary number using
 # the algorithm you devised in class.
 def binary_to_decimal(binary_array)
-  raise NotImplementedError
+  base_ten_num = 0
+  index = 0
+  while index < 8 do
+    base_ten_num += binary_array[index] * (2 ** (7 - index))
+    index += 1
+  end
+  return base_ten_num
 end
