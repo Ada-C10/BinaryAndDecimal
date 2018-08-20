@@ -5,15 +5,27 @@
 # Calculate  and return the decimal value for this binary number using
 # the algorithm you devised in class.
 def binary_to_decimal(binary_array)
+  # input: binary in one byte (8 bits)
+
+  # only interested in bytes
   if binary_array.length == 8
-    length = binary_array.length
+
+    # initialize variable
     decimal_num = 0
 
-    length.times do |index|
-      decimal_num += binary_array[(length-1)-index] * 2**(index)
-      index += 1
+    # exponent should range from 0-->7
+    exponent = binary_array.length - 1
+
+    # loop through each bit, index 0-->7
+    binary_array.each do |bit|
+
+      # add result of math below to decimal_num
+      decimal_num += bit * 2 ** exponent
+      # decrease exponent since value should get smaller as we move from left to right (increasing in index value)
+      exponent -= 1
     end
 
+    # return converted decimal value
     return decimal_num
   end
 end
