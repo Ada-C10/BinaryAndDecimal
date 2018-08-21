@@ -1,5 +1,6 @@
 require 'minitest/autorun'
 require 'minitest/reporters'
+require 'awesome_print'
 require_relative '../lib/binary_to_decimal'
 
 describe "binary to decimal" do
