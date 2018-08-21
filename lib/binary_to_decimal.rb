@@ -5,5 +5,15 @@
 # Calculate  and return the decimal value for this binary number using
 # the algorithm you devised in class.
 def binary_to_decimal(binary_array)
-  raise NotImplementedError
+  exponents = [7, 6, 5, 4, 3, 2, 1, 0]
+  decimal_num = 0
+  exp = 0
+  raise NotImplementedError if binary_array.length != 8
+
+  binary_array.each do  |i|
+    convert = i * (2**(exponents[exp]))
+    decimal_num += convert
+    exp +=1
+  end
+  return decimal_num
 end
