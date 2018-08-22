@@ -4,16 +4,29 @@
 # The least significant bit is at index 7.
 # Calculate  and return the decimal value for this binary number using
 # the algorithm you devised in class.
+
+# first way to do it taking out reverse
+# def binary_to_decimal(binary_array)
+#   decimal = 0
+#   count = 7
+#
+#   binary_array.each do |num|
+#     decimal += (num * (2**count))
+#     count -= 1
+#   end
+#
+#   return decimal
+# end
+
+# Using times loop and count
+
 def binary_to_decimal(binary_array)
-  #raise NotImplementedError
   decimal = 0
-  count = 0
-  binary_array.reverse.each do |num|
-    # puts "#{decimal}, #{count}, #{num}"
-    decimal += (num * (2**count))
-    count += 1
+  count = binary_array.length
+
+  count.times do |index|
+    decimal += (binary_array[index] * (2**(count-1-index)))
   end
 
   return decimal
-
 end
