@@ -5,5 +5,12 @@
 # Calculate  and return the decimal value for this binary number using
 # the algorithm you devised in class.
 def binary_to_decimal(binary_array)
+  expected_decimal = 0
+  binary_array.each_with_index do |num, i|
+    x = 7 - i
+    expected_decimal += num * 2 ** x
+  end
+
+  return expected_decimal
   raise NotImplementedError
 end
