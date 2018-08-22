@@ -19,6 +19,3 @@ def binary_to_decimal(binary_array)
   return decimal
   # raise NotImplementedError
 end
-
-loom = [0, 0, 0, 0, 1, 1, 0, 1]
-puts binary_to_decimal(loom)
