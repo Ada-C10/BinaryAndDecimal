@@ -1,0 +1,41 @@
+Last login: Sun Aug 19 15:48:20 on ttys003
+Sabines-MacBook-Pro:~ ada$ ls
+Applications		Music			git-sandbox
+Desktop			Pictures		hello.rb
+Documents		Public			pryme.rb
+Downloads		ada			tdd-exercise
+Library			clock
+Movies			git-pull-activity
+Sabines-MacBook-Pro:~ ada$ cd Documents
+Sabines-MacBook-Pro:Documents ada$ ls
+Ruby_wk.1	Ruby_wk.2	Ruby_wk.3	friendship_note	jump-start-live
+Sabines-MacBook-Pro:Documents ada$ cd CS_fundamentals_wk.3
+-bash: cd: CS_fundamentals_wk.3: No such file or directory
+Sabines-MacBook-Pro:Documents ada$ mkdir CS_fundamentals_wk.3
+Sabines-MacBook-Pro:Documents ada$ ls
+CS_fundamentals_wk.3	Ruby_wk.2		friendship_note
+Ruby_wk.1		Ruby_wk.3		jump-start-live
+Sabines-MacBook-Pro:Documents ada$ cd CS_fundamentals_wk.3/
+Sabines-MacBook-Pro:CS_fundamentals_wk.3 ada$ git clone https://github.com/Sabineth17/array_equals.git
+Cloning into 'array_equals'...
+remote: Counting objects: 15, done.
+remote: Total 15 (delta 0), reused 0 (delta 0), pack-reused 15
+Unpacking objects: 100% (15/15), done.
+Sabines-MacBook-Pro:CS_fundamentals_wk.3 ada$ atom .
+Sabines-MacBook-Pro:CS_fundamentals_wk.3 ada$ cd CS_fundamentals_wk.3
+-bash: cd: CS_fundamentals_wk.3: No such file or directory
+Sabines-MacBook-Pro:CS_fundamentals_wk.3 ada$ ls
+array_equals
+Sabines-MacBook-Pro:CS_fundamentals_wk.3 ada$ git clone https://github.com/Sabineth17/BinaryAndDecimal.git
+Cloning into 'BinaryAndDecimal'...
+remote: Counting objects: 42, done.
+remote: Total 42 (delta 0), reused 0 (delta 0), pack-reused 42
+Unpacking objects: 100% (42/42), done.
+Sabines-MacBook-Pro:CS_fundamentals_wk.3 ada$ atom .
+Sabines-MacBook-Pro:CS_fundamentals_wk.3 ada$ ls
+BinaryAndDecimal	array_equals
+Sabines-MacBook-Pro:CS_fundamentals_wk.3 ada$ cd BinaryAndDecimal/
+Sabines-MacBook-Pro:BinaryAndDecimal ada$ ls
+README.md	lib		rakefile	specs
+Sabines-MacBook-Pro:BinaryAndDecimal ada$ atom .
+Sabines-MacBook-Pro:BinaryAndDecimal ada$ 

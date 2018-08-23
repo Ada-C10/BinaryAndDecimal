@@ -4,6 +4,23 @@
 # The least significant bit is at index 7.
 # Calculate  and return the decimal value for this binary number using
 # the algorithm you devised in class.
+
+
+
+# def binary_to_decimal(binary_array)
+#   binary_array[0] = "" * (2**7)
+#   binary_array[7] = "" * (2**0)
+#   # raise NotImplementedError
+# end
+#
+# binary_array = Array.new(8) { rand(0..1) }
+
 def binary_to_decimal(binary_array)
-  raise NotImplementedError
+  sum = 0
+  8.times do |index|
+    if binary_array[index] == 1
+      sum += (2 ** (7 - index))
+    end
+  end
+  return sum
 end
