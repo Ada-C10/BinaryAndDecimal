@@ -1,9 +1,17 @@
-# A method named `binary_to_decimal` that receives as input an array of size 8.
-# The array is randomly filled with 0’s and 1’s.
-# The most significant bit is at index 0.
-# The least significant bit is at index 7.
-# Calculate  and return the decimal value for this binary number using
-# the algorithm you devised in class.
 def binary_to_decimal(binary_array)
-  raise NotImplementedError
+  decimal_array = []
+  power_of_2 = 7
+  binary_array.each do |bit|
+    decimal_of_bit = bit * (2 ** power_of_2)
+
+    decimal_array << decimal_of_bit
+    power_of_2 = power_of_2 - 1
+  end
+
+  sum = 0
+  decimal_array.each do |decimal|
+    sum += decimal
+  end
+
+  return sum
 end
