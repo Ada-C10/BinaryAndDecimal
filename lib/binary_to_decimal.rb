@@ -9,22 +9,36 @@
 # binary_to_decimal method
 def binary_to_decimal(binary_array)
 
-  decimals = []
+  decimal = 0
+  i = 0
+  j = binary_array.length - 1
 
-  test_array = Array.new(binary_array)
-
-  binary_array.each do |i|
-
-      n = test_array.length - 1
-
-      decimals << i * (2 ** n)
-
-      test_array.delete_at(0)
-
-    end
-
-  decimal = decimals.reduce (:+)
-
+  until j < 0
+    decimal += binary_array[j] * (2 ** i)
+    i += 1
+    j -= 1
+  end
+  
   return decimal
-
 end
+
+  # Earlier version using enumerable methods,
+  #  which isn't allowed for this assignment
+
+  # decimals = []
+  #
+  # test_array = Array.new(binary_array)
+  #
+  # binary_array.each do |i|
+  #
+  #     n = test_array.length - 1
+  #
+  #     decimals << i * (2 ** n)
+  #
+  #     test_array.delete_at(0)
+  #
+  #   end
+  #
+  # decimal = decimals.reduce (:+)
+  #
+  # return decimal
