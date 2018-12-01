@@ -28,3 +28,52 @@ decimalize([0,0,0]) # => 0
 
 # Time complexity is O(n): we touch every array element exactly once
 # Space compleity is O(1): we allocate a constant amount of space for extra variables that does not change as the array becomes arbitrarily large
+
+
+def binarize(integer)
+  # validate integer >= 0
+  raise ArgumentError if integer.class != Integer || integer < 0
+
+  return [0] if  integer == 0
+
+  # Find n, the greatest power of 2 that fits into integer
+  n = 0
+  # increment n if the next power of two fits into integer 
+  while 2**(n+1) <= integer
+    n+= 1 
+  end 
+  
+  binary_array = [1]
+  remainder = integer - (2**n)
+
+  (1..n).each do |i|
+  # if the prev remainder was a power of two,
+  # the rest of the array is 0s
+    if remainder == 0
+      binary_array << 0
+  # if the next power of 2 fits into remainder,
+  # add 1 to array and get new remainder
+    elsif (remainder - 2**(n-i)) >= 0
+      binary_array << 1
+      remainder -= 2**(n-i)
+    else 
+  # if the next power of 2 does not fit,
+  # add 0 to array and do not alter remainder
+      binary_array << 0
+    end
+  end
+
+  return binary_array
+end
+
+p binarize(0)
+p binarize(1)
+p binarize(2)
+p binarize(4)
+p binarize(5)
+p binarize(14)
+p binarize(15)
+p binarize(16)
+p binarize(17)
+
+# binarize(-1) # => ArgumentError
