@@ -5,13 +5,26 @@
 # Calculate  and return the decimal value for this binary number using
 # the algorithm you devised in class.
 
-require "pry"
-require "awesome_print"
+def decimalize(binary_array)
 
-def binary_to_decimal(binary_array)
-  decimal_value = 0
-  binary_array.each_with_index do |n, i|
-    decimal_value += n*(2**(7-i))
+  raise ArgumentError unless binary_array.class == Array
+  decimal = 0
+  n = binary_array.length
+  n.times do |i|
+    least_bit = binary_array[n-i-1]
+    raise ArgumentError unless least_bit.class == Integer && least_bit >= 0
+    decimal += least_bit * 2**i
   end
-  return decimal_value
+  return decimal
 end
+
+decimalize([1,0,1]) # => 5 
+decimalize([0,0,0]) # => 0
+
+# decimalize(nil) # => ArgumentError
+# decimalize([nil]) # => ArgumentError
+# decimalize() # => wrong number of arguments (given 0, expected 1)
+# decimalize([0,-1,0]) # => ArgumentError
+
+# Time complexity is O(n): we touch every array element exactly once
+# Space compleity is O(1): we allocate a constant amount of space for extra variables that does not change as the array becomes arbitrarily large
